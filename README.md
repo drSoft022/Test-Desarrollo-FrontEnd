@@ -8,10 +8,10 @@ Se realizo un dashboard con una CRUD para empleados y cargos con relaciones entr
 
 ## Comando para despliegue local
 
-REACT
+## REACT
 	/npm instal react react-dom
-	/npm install --save-dev @vitejs/plugin-react--import react from '@vitejs/plugin-react'
-INERTIA
+	/npm install --save-dev @vitejs/plugin-react
+## INERTIA
 	/composer require inertiajs/inertia-laravel DEV
 	/npm install @inertiajs/inertia @inertiajs/inertia-react DEV
 	/php artisan vendor:publish --provider="Inertia\ServiceProvider"
