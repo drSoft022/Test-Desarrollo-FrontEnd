@@ -55,7 +55,7 @@ const FormComp = ({roles, empleados, onSubFunc, product}) => {
                         name="area"
                         value={formValues.area}
                         onChange={handleChange}
-                        maxLength="20"
+                        maxLength="40"
                         placeholder="area"
                         required
                     />
@@ -69,7 +69,7 @@ const FormComp = ({roles, empleados, onSubFunc, product}) => {
                         name="cargo"
                         value={formValues.cargo}
                         onChange={handleChange}
-                        maxLength="20"
+                        maxLength="50"
                         placeholder="cargo"
                         required
                     />
@@ -102,7 +102,7 @@ const FormComp = ({roles, empleados, onSubFunc, product}) => {
                         name="jefe"
                         value={formValues.jefe}
                         onChange={handleChange}
-                        maxLength="40"
+                        maxLength="80"
                         placeholder="jefe"
                         required
                     />

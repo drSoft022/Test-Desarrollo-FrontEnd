@@ -88,10 +88,10 @@ class CargoController extends Controller
 
             $request->validate([
             "empleado" => "required|integer",
-            "area" => "required|string|max:20",
-            "cargo" => "required|string|max:20",
+            "area" => "required|string|max:50",
+            "cargo" => "required|string|max:50",
             "rol" => "required|integer|min:1",
-            "jefe" => "required|string|max:40",
+            "jefe" => "required|string|max:80",
             ]);
 
             $cargo->update($request->all());
