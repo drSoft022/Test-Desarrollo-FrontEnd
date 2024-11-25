@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FormComp = ({roles, empleados, onSubFunc, product}) => {
+const FormCargo = ({roles, empleados, onSubFunc, product}) => {
     const [formValues, setFormValues] = useState({
         empleado : product ? product.empleado : '',
         area : product ? product.area : '',
@@ -115,4 +115,4 @@ const FormComp = ({roles, empleados, onSubFunc, product}) => {
     )
 }
 
-export default FormComp
+export default FormCargo
