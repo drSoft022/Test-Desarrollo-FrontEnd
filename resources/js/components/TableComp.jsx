@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormComp from "./FormComp";
+import FormCargo from "./FormCargo";
 import ModalComp from "./ModalComp"; 
 import { Inertia } from "@inertiajs/inertia";
 
@@ -25,7 +26,7 @@ const TableComp = ({elemento, type, titles, editFunc, arr}) => {
         Inertia.delete('/destroy/'+id, {
             onFinish: () =>{
                 alert('Operacion exitosa!')
-                Inertia.visit('/empleado')
+                Inertia.visit('/'+type)
             },
             onError: (errors) => {
                 console.log("upsi",errors);
@@ -52,13 +53,31 @@ const TableComp = ({elemento, type, titles, editFunc, arr}) => {
                     {
                         arr.map((item)=>(
                             <tr key={item.id}>
-                                <th scope="row">{item.id}</th>
-                                <td>{item.nombres}</td>
-                                <td>{item.Apellidos}</td>
-                                <td>{item.identificacion}</td>
-                                <td>{item.telefono}</td>
-                                <td>{item.ciudad}</td>
-                                <td>{item.departamento}</td>
+                                {
+                                    type === "empleado" && (
+                                        <>
+                                            <th scope="row">{item.id}</th>
+                                            <td>{item.nombres}</td>
+                                            <td>{item.Apellidos}</td>
+                                            <td>{item.identificacion}</td>
+                                            <td>{item.telefono}</td>
+                                            <td>{item.ciudad}</td>
+                                            <td>{item.departamento}</td>
+                                        </>
+                                     )
+                                }
+                                {
+                                    type === "cargo" && (
+                                        <>
+                                            <th scope="row">{item.id}</th>
+                                            <td>{item.nombres} {item.Apellidos}</td>
+                                            <td>{item.area}</td>
+                                            <td>{item.cargo}</td>
+                                            <td>{item.rol}</td>
+                                            <td>{item.jefe}</td>
+                                        </>
+                                     )
+                                }
                                 <td><button className="buttonMod" onClick={()=>{editForm(item)}}><i className="fa-solid fa-pencil fa-xl color"></i></button></td>
                                 <td><button className="buttonMod" onClick={()=>{dropFunc(item.id)}}><i className="fa-solid fa-trash-can fa-xl color"></i></button></td>
                             </tr>
@@ -68,10 +87,15 @@ const TableComp = ({elemento, type, titles, editFunc, arr}) => {
             </table>
             {
                 isEditing && (
-                    <ModalComp closeModal={editForm} title={"Editar Empleado"}>
+                    <ModalComp closeModal={editForm} title={"Editar Registro"}>
                         {
                             type === "empleado" && (
                                 <FormComp ciudades={elemento[0]} departamentos={elemento[1]} onSubFunc={editFunc} product={toEdit}></FormComp>
+                            )
+                        }
+                        {
+                            type === "cargo" && (
+                                <FormCargo empleados={elemento[0]} roles={elemento[1]} onSubFunc={editFunc} product={toEdit}></FormCargo>
                             )
                         }
                     </ModalComp>

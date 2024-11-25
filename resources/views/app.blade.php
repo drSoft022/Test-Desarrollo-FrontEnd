@@ -51,7 +51,7 @@
                     <a class="nav-link" href="{{ route('empleado') }}">Empleados</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cargos</a>
+                    <a class="nav-link" href="{{ route('cargo') }}">Cargos</a>
                 </li>
             </ul>
         </nav>
