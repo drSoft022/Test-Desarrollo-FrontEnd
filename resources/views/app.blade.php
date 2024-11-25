@@ -22,7 +22,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-user fa-1x"></i> User
+                            <i class="fa-solid fa-user fa-1x"></i> Usuario
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><hr class="dropdown-divider"></li>
@@ -42,21 +42,20 @@
         <nav id="sidebar" class="bg-dark">
             <ul class="nav flex-column p-3">
                 <li class="nav-item text-center">
-                    <a class="nav-link active" href="#"><i class="fa-solid fa-house"></i></a>
+                    <a class="nav-link active" href="{{ route('dashboard') }}"><i class="fa-solid fa-house"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Analytics</a>
+                    <strong>Lista</strong><hr></hr>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Reports</a>
+                    <a class="nav-link" href="{{ route('empleado') }}">Empleados</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
+                    <a class="nav-link" href="#">Cargos</a>
                 </li>
             </ul>
         </nav>
-
-        <div id="content" class="flex-grow-1 bg-light">
+        <div id="content" className="flex-grow-1 bg-light">
             <div id="react-app" data-page="{{ json_encode($page) }}">
             </div>
         </div>

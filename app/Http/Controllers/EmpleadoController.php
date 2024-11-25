@@ -13,8 +13,11 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        $empleados = Empleado::paginate(7);
-        return Inertia::render('DashContent', $empleados);
+        $empleados = Empleado::join('ciudads', 'empleados.id_ciudad', "=", 'ciudads.id')
+                                ->join('departamentos', 'empleados.id_departamento', "=", 'departamentos.id')
+                                ->select('empleados.*', 'ciudads.ciudad', 'departamentos.departamento')
+                                ->paginate(7);
+        return Inertia::render('Empleado', $empleados);
     }
 
     /**
