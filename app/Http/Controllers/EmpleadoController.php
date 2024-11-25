@@ -13,7 +13,7 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        $empleados = Empleado::all();
+        $empleados = Empleado::paginate(7);
         return Inertia::render('DashContent', $empleados);
     }
 

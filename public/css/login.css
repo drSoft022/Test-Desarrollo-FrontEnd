@@ -1,0 +1,60 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container-login {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-container {
+    width: 60%;
+    background-image: linear-gradient(rgba(0, 0, 139, 1), rgba(0, 0, 139, 1)),
+                        url('/img/fondo1.jpg');
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-blend-mode: overlay;
+}
+
+.right-container {
+    width: 40%;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.titleLogin{
+    color: white;
+    font-size: 40px;
+}
+
+@media (max-width: 768px) {
+    .container-login {
+        flex-direction: column;
+    }
+
+    .left-container, .right-container {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+i{
+    color: #653eac;
+}

@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+#sidebar {
+    min-width: 100px;
+    max-width: 250px;
+    width: 250px;
+    min-height: 100vh;
+    background-color: #3d40e8 !important;
+    color: white;
+}
+#sidebar .nav-link {
+    color: white;
+}
+#sidebar .nav-link:hover {
+    background-color: #0a7df0;
+}
+#content {
+    flex: 1;
+    padding: 20px;
+}
+.navbar{
+    background: linear-gradient(#fafafa, #eeeeee) !important;
+}
+
+.navbar-brand{
+    color: black !important;
+}
+
+#navbarDropdown{
+    color: black !important;
+}
+
+#bcid{
+    color: black !important;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 10px;
+    }
+
+    #sidebar .nav-link {
+        font-size: 14px;
+        padding-left: 1px; 
+    }
+}
