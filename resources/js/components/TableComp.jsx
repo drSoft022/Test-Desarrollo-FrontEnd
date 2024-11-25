@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import FormComp from "./FormComp";
+import ModalComp from "./ModalComp"; 
+import { Inertia } from "@inertiajs/inertia";
 
-const TableComp = ({titles, arr}) => {
+const TableComp = ({elemento, type, titles, editFunc, arr}) => {
+    const [isEditing, setIsEditing] = useState(false)
+    const [toEdit, setToEdit] = useState([])
+    const [deleteI, setDeleteI] = useState(false)
+    const [toDelete, setToDelete] = useState()
+
+    const editForm = (itemParam) => {
+        setIsEditing(!isEditing)
+        if(itemParam){
+            setToEdit(itemParam)
+        }
+    }
+
+    const dropFunc = (id) => {
+        setDeleteI(!deleteI)
+        setToDelete(id)
+    }
+
+    const deleteItem = (id) => {
+        Inertia.delete('/destroy/'+id, {
+            onFinish: () =>{
+                alert('Operacion exitosa!')
+                Inertia.visit('/empleado')
+            },
+            onError: (errors) => {
+                console.log("upsi",errors);
+            }
+        })
+    }
+
     return(
         <div className="table-responsive">
             <table className="table">
@@ -27,13 +59,35 @@ const TableComp = ({titles, arr}) => {
                                 <td>{item.telefono}</td>
                                 <td>{item.ciudad}</td>
                                 <td>{item.departamento}</td>
-                                <td>||</td>
-                                <td>||</td>
+                                <td><button className="buttonMod" onClick={()=>{editForm(item)}}><i className="fa-solid fa-pencil fa-xl color"></i></button></td>
+                                <td><button className="buttonMod" onClick={()=>{dropFunc(item.id)}}><i className="fa-solid fa-trash-can fa-xl color"></i></button></td>
                             </tr>
                         ))
                     }
                 </tbody>
             </table>
+            {
+                isEditing && (
+                    <ModalComp closeModal={editForm} title={"Editar Empleado"}>
+                        {
+                            type === "empleado" && (
+                                <FormComp ciudades={elemento[0]} departamentos={elemento[1]} onSubFunc={editFunc} product={toEdit}></FormComp>
+                            )
+                        }
+                    </ModalComp>
+                 )
+            }
+            {
+                deleteI && (
+                    <ModalComp closeModal={dropFunc} title={"Eliminacion"}>
+                        <div className="text-center">
+                            Esta seguro de borrar el registro?
+                            <br></br>
+                            <button className="btn btn-danger" onClick={()=>{deleteItem(toDelete)}}>Aceptar</button>
+                        </div>
+                    </ModalComp>
+                )
+            }
         </div>
     )
 }

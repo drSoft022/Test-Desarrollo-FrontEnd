@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string("nombres");
             $table->string("Apellidos");
-            $table->integer("identificacion");
-            $table->integer("telefono");
+            $table->bigInteger("identificacion");
+            $table->bigInteger("telefono");
             $table->unsignedBigInteger('id_ciudad');
             $table->unsignedBigInteger('id_departamento');
 

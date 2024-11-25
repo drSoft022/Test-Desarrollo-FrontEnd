@@ -20,4 +20,20 @@ Route::middleware([
     Route::get('/empleado', [
         EmpleadoController::class, 'index'
     ])->name('empleado');
+
+    Route::post('/empleado', [
+        EmpleadoController::class, 'store'
+    ]);
+
+    Route::get('/download', [
+        EmpleadoController::class, 'exportToCSV'
+    ]);
+
+    Route::put('/empleado/{id}', [
+        EmpleadoController::class, 'update'
+    ]);
+
+    Route::delete('/destroy/{id}',[
+        EmpleadoController::class, 'destroy'
+    ]);
 });

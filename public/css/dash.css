@@ -67,7 +67,6 @@ body {
   .modal-container {
     background-color: white;
     width: 500px;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-height: 80vh;
@@ -77,8 +76,9 @@ body {
   }
   
   .modal-header {
+    background-color: #e1e1e1;
     display: flex;
-    justify-content: flex-end;
+    color: #afadad;
   }
   
   .close-btn {
@@ -98,3 +98,36 @@ body {
       width: 90%;
     }
   }
+
+  .buttonMod{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+.pag{
+    color: #693de8;
+    font-size: 20px;
+}
+
+.create{
+    color: #693de8;
+    font-size: 15px;
+    border: 1px solid #693de8;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.closeModal{
+    width: 450px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.color{
+    color: #693de8;
+}
