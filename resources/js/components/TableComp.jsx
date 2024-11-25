@@ -23,7 +23,7 @@ const TableComp = ({elemento, type, titles, editFunc, arr}) => {
     }
 
     const deleteItem = (id) => {
-        Inertia.delete('/destroy/'+id, {
+        Inertia.delete('/'+type+'/destroy/'+id, {
             onFinish: () =>{
                 alert('Operacion exitosa!')
                 Inertia.visit('/'+type)

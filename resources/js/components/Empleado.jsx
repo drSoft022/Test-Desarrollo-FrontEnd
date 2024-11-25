@@ -68,7 +68,7 @@ const empleado = (empleados) => {
         <div>
             <h2>Empleados</h2>
             <button className="buttonMod create m-3" onClick={isCreating}><i className="fa-solid fa-user-plus fa-xl"></i> Agregar</button>
-            <a className="buttonMod create m-3" href="/download"><i className="fa-solid fa-file-arrow-down fa-xl"></i> Descargar</a>
+            <a className="buttonMod create m-3" href="/empleado/download"><i className="fa-solid fa-file-arrow-down fa-xl"></i> Descargar</a>
             <TableComp elemento={elementoParam} type={"empleado"} titles={titlesParam} editFunc={editFunc} arr={empleados[0].data}></TableComp>
             {
                 create && (

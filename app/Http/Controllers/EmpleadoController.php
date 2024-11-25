@@ -125,7 +125,7 @@ class EmpleadoController extends Controller
                 $departamentos
             ]);
         }catch(\Exception $e){
-            return Inertia::render('DashContent');
+            dd($e);
         }
     }
 

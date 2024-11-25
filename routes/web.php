@@ -26,7 +26,7 @@ Route::middleware([
         EmpleadoController::class, 'store'
     ]);
 
-    Route::get('/download', [
+    Route::get('/empleado/download', [
         EmpleadoController::class, 'exportToCSV'
     ]);
 
@@ -34,7 +34,7 @@ Route::middleware([
         EmpleadoController::class, 'update'
     ]);
 
-    Route::delete('/destroy/{id}',[
+    Route::delete('/empleado/destroy/{id}',[
         EmpleadoController::class, 'destroy'
     ]);
 
@@ -50,11 +50,11 @@ Route::middleware([
         CargoController::class, 'update'
     ]);
 
-    Route::delete('/destroy/{id}',[
+    Route::delete('/cargo/destroy/{id}',[
         CargoController::class, 'destroy'
     ]);
 
-    Route::get('/download', [
+    Route::get('/cargo/download', [
         CargoController::class, 'exportToCSV'
     ]);
 });
