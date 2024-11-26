@@ -162,7 +162,7 @@ class CargoController extends Controller
                     $car->created_at,
                 ];
 
-                fputcsv($file, $row);
+                fputcsv($file, $row, ";");
             }
 
             fclose($file);

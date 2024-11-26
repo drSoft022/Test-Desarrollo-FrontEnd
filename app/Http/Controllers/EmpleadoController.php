@@ -158,7 +158,7 @@ class EmpleadoController extends Controller
                     $emp->created_at,
                 ];
 
-                fputcsv($file, $row);
+                fputcsv($file, $row, ";");
             }
 
             fclose($file);
