@@ -55,7 +55,7 @@
                 </li>
             </ul>
         </nav>
-        <div id="content" className="flex-grow-1 bg-light">
+        <div id="content">
             <div id="react-app" data-page="{{ json_encode($page) }}">
             </div>
         </div>

@@ -44,10 +44,10 @@ const empleado = ( cargos ) => {
         <>
             <h2>Cargos</h2>
             <button className="buttonMod create m-3" onClick={toggleCreate}>
-                <i className="fa-solid fa-user-plus fa-xl"></i> Agregar
+                <i className="fa-solid fa-user-plus fa-xl"></i> <span>Agregar</span>
             </button>
             <a className="buttonMod create m-3" href="/cargo/download">
-                <i className="fa-solid fa-file-arrow-down fa-xl"></i> Descargar
+                <i className="fa-solid fa-file-arrow-down fa-xl"></i> <span>Descargar</span>
             </a>
             <TableComp 
                 elemento={[roles, empleados]} 

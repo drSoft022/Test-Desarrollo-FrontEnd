@@ -20,6 +20,7 @@ body {
 #content {
     flex: 1;
     padding: 20px;
+    overflow: scroll;
 }
 .navbar{
     background: linear-gradient(#fafafa, #eeeeee) !important;
@@ -46,9 +47,13 @@ body {
         font-size: 14px;
         padding-left: 1px; 
     }
-    table{
-        width: 1px !important;
+
+    .buttonMod{
+        span{
+            display: none;
+        }
     }
+    
 }
 
 .modal-overlay {
